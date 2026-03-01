@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatroom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chatroom</h1>
+            <p id="username-display">Loading...</p>
+        </div>
+        
+        <div class="chat-area">
+            <div id="messages" class="messages-container">
+                <!-- Messages will appear here -->
+            </div>
+        </div>
+        
+        <div class="input-area">
+            <input 
+                type="text" 
+                id="message-input" 
+                placeholder="Type a message..."
+                autocomplete="off"
+            >
+            <button id="send-btn">Send</button>
+        </div>
+        
+        <div id="ban-notice" class="ban-notice" style="display: none;">
+            <button id="close-notice" class="notice-close">✕</button>
+            <div class="ban-notice-content">
+                <strong>⚠️ You have been blocked from sending messages</strong>
+                <p id="ban-reason-text"></p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>i ai generated this in like 5 minutes when i was bored it is not good</a></p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

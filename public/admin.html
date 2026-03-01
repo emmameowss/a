@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div id="login-section" class="admin-section">
+            <h1>Admin Panel - Login</h1>
+            <div class="login-box">
+                <input 
+                    type="password" 
+                    id="admin-password" 
+                    placeholder="Enter admin password"
+                    autocomplete="off"
+                >
+                <button id="login-btn">Login</button>
+                <p id="login-error" class="error"></p>
+            </div>
+        </div>
+
+        <div id="admin-section" class="admin-section" style="display: none;">
+            <div class="admin-header">
+                <h1>Admin Panel</h1>
+                <button id="logout-btn" class="logout-btn">Logout</button>
+            </div>
+
+            <div class="admin-content">
+                <h2>Registered Users</h2>
+                <p class="info-text">Showing <span id="user-count">0</span> registered user(s)</p>
+                
+                <div class="users-list-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>User Agent</th>
+                                <th>First Seen</th>
+                                <th>Last Seen</th>
+                                <th>Status</th>
+                                <th>Ban Reason</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-list">
+                            <!-- Users will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ban Reason Modal -->
+    <div id="ban-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Block User</h2>
+            <p id="ban-username-display"></p>
+            <textarea id="ban-reason" placeholder="Enter reason for blocking (optional)" rows="4"></textarea>
+            <div class="modal-buttons">
+                <button id="confirm-ban" class="modal-confirm">Confirm Block</button>
+                <button id="cancel-ban" class="modal-cancel">Cancel</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
